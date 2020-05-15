@@ -1,0 +1,21 @@
+version : 0.2
+
+phases:
+  install:
+    commands:
+      -echo Installing Node...............
+      -curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      -apt install -y nodejs
+  pre-build:
+    commands:
+      -echo Installing dependecies.............
+      -npm install
+  build:
+    commands:
+      -echo Building Project....................
+      -npm run build
+artifacts:
+  files:
+    -"**/*"
+  discard-paths: no
+  base-directory:build
