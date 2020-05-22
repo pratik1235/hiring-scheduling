@@ -1,4 +1,5 @@
 import React from 'react';
+import { Buffer } from 'buffer/';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
 import { useLocation } from "react-router-dom"
@@ -15,7 +16,7 @@ const useQuery = () => {
 
 const CandidateForm = ({ params }) => {
   const searchQuery = useQuery();
-  if (!searchQuery || timeExpired(searchQuery)) {
+  if (!searchQuery || timeExpired(Buffer.from(searchQuery, 'base64').toString('utf8'))) {
     return <Expired />
   }
   return (
