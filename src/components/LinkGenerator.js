@@ -6,9 +6,8 @@ const LinkGenerator = () => {
   const link = `/form?tt=${new Date()}`
   return (
     <div className="container">
-      <div className="row">
-        <Link className="row" to={link}>Go to </Link>
-      </div>
+      <div className="valign-wrapper"><Link to={link}><h3 className=" center red-text text-lighten-1">Go to </h3></Link></div>
+            
     </div>)
 }
 
