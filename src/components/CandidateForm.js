@@ -14,7 +14,7 @@ const useQuery = () => {
   return timeToken && timeToken.length ? timeToken[1].replace(/%20/g, ' ') : null;
 }
 
-const CandidateForm = ({ params }) => {
+const CandidateForm = () => {
   const searchQuery = useQuery();
   if (!searchQuery || timeExpired(Buffer.from(searchQuery, 'base64').toString('utf8'))) {
     return <Expired />
