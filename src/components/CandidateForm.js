@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom"
 import Expired from './Expired';
 import timeExpired from '../utils/utils';
 import submitToAPI from '../utils/formSubmit'
+
 // A custom hook that builds on useLocation to parse
 // the query string for you.
 
@@ -140,10 +141,10 @@ const CandidateForm = () => {
             </div>
           </form>
         </div>
-        
-      
+
     </div>
   );
 }
 
 export default CandidateForm;
+
