@@ -5,7 +5,6 @@ import 'materialize-css/dist/js/materialize.min.js';
 import { useLocation } from "react-router-dom"
 import Expired from './Expired';
 import timeExpired from '../utils/utils';
-import Header from './Header';
 // A custom hook that builds on useLocation to parse
 // the query string for you.
 const useQuery = () => {
@@ -139,10 +138,10 @@ const CandidateForm = () => {
             </div>
           </form>
         </div>
-        
-      
+
     </div>
   );
 }
 
 export default CandidateForm;
+

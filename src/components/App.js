@@ -18,7 +18,6 @@ class App extends Component {
             <Route path="/submitted">	
               <ThankYou/>	
             </Route>
-
         </Switch>
         </Router >
       </>
