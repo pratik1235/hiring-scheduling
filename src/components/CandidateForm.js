@@ -5,9 +5,10 @@ import 'materialize-css/dist/js/materialize.min.js';
 import { useLocation } from "react-router-dom"
 import Expired from './Expired';
 import timeExpired from '../utils/utils';
-import Header from './Header';
+import submitToAPI from '../utils/formSubmit'
 // A custom hook that builds on useLocation to parse
 // the query string for you.
+
 const useQuery = () => {
   const reg = new RegExp('[?&]tt=([^&#]*)', 'i');
   const timeToken = reg.exec(useLocation().search);
@@ -29,7 +30,7 @@ const CandidateForm = () => {
         </p>
         
         <div className="row">
-          <form className="col s12" method='POST' action="https://xhepncvfs6.execute-api.us-east-1.amazonaws.com/prod/">
+          <form className="col s12" method='POST' >
             <div className="row">
               <div className="input-field col s3">
                 <label htmlFor="candidate_name" className="teal-text">Name</label>
@@ -50,24 +51,24 @@ const CandidateForm = () => {
                 <label className="black-text"> <b>Prefernce 1</b></label>
               </div>
               <div className="input-field col s3">
-                  <input id="Date_1" name="pref1-date" type="text" className="datepicker"/>
+                  <input id="pref1-date" name="pref1-date" type="text" className="datepicker"/>
                   <label htmlFor="Date_1" className="teal-text">Option 1</label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref1-slot1" type="radio"/>
+                    <input id="pref1-slot1" name="pref1" type="radio" value="slot1"/>
                     <span>9:00AM - 1:00PM </span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref1-slot2" type="radio" />
+                    <input id="pref1-slot2" name="pref1" type="radio" value="slot2"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref1-slot3" type="radio"/>
+                    <input id="pref1-slot3" name="pref1" type="radio" value="slot3"/>
                     <span>5:00PM - 9:00PM </span>
                   </label>
               </div>
@@ -77,24 +78,24 @@ const CandidateForm = () => {
                 <label className="black-text"><b>Prefernce 2</b></label>
               </div>
               <div className="input-field col s3">
-                  <input id="Date_2" name="pref2-date" type="text" className="datepicker"/>
+                  <input id="pref2-date" name="pref2-date" type="text" className="datepicker"/>
                   <label htmlFor="Date_2" className="teal-text">Option 2</label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref2-slot1" type="radio"/>
+                    <input id="pref2-slot1" name="pref2" type="radio" value="slot1"/>
                     <span>9:00AM - 1:00PM </span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref2-slot2" type="radio" />
+                    <input id="pref2-slot2" name="pref2" type="radio" value="slot2"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref2-slot3" type="radio"/>
+                    <input id="pref2-slot3"name="pref2" type="radio" value="slot3"/>
                     <span>5:00PM - 9:00PM </span>
                   </label>
               </div>
@@ -104,24 +105,24 @@ const CandidateForm = () => {
                 <label className="black-text strong"><b>Prefernce 3</b></label>
               </div>
               <div className="input-field col s3">
-                  <input id="Date_3" name="pref3-date" type="text" className="datepicker"/>
+                  <input id="pref3-date" name="pref3-date" type="text" className="datepicker"/>
                   <label htmlFor="Date_3" className="teal-text">Option 3</label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref3-slot1" type="radio" />
+                    <input id="pref3-slot1" name="pref3" type="radio" value="slot1"/>
                     <span>9:00AM - 1:00PM </span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref3-slot2" type="radio"/>
+                    <input id="pref3-slot2" name="pref3" type="radio" value="slot2"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input name="pref3-slot3" type="radio"/>
+                    <input id="pref3-slot3" name="pref3" type="radio" value="slot3"/>
                     <span>5:00PM - 9:00PM </span>
                   </label>
               </div>
@@ -129,7 +130,7 @@ const CandidateForm = () => {
             
             <div className="row ">
               <div className="center">
-                <button className="btn waves-effect waves-light red" type="submit" name="action">Submit<i className="material-icons right">send</i></button>
+                <button className="btn waves-effect waves-light red" type="submit" onClick={e=>submitToAPI(e)}>Submit<i className="material-icons right">send</i></button>
               </div>
             </div>
             <div className="row">

@@ -12,7 +12,7 @@ class App extends Component {
         <Header />
         <Router >
         <Switch>	          
-            <Route path="/">	
+            <Route exact path="/">	
               <CandidateForm />	
             </Route>                      
             <Route path="/submitted">	
