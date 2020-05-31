@@ -2,10 +2,17 @@ import React from 'react';
 import { Buffer } from 'buffer/';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
-import { useLocation } from "react-router-dom"
+import { useLocation} from "react-router-dom"
 import Expired from './Expired';
 import timeExpired from '../utils/utils';
-import submitToAPI from '../utils/formSubmit'
+import submitToAPI from '../utils/formSubmit';
+
+
+function SubmitToAPI(e){
+  submitToAPI(e);
+
+}
+
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -57,20 +64,20 @@ const CandidateForm = () => {
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref1-slot1" name="pref1" type="radio" value="slot1"/>
-                    <span>9:00AM - 1:00PM </span>
+                    <input id="pref1-slot1" name="pref1" type="radio" value="9:00AM - 1:00PM"/>
+                    <span>9:00AM - 1:00PM</span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref1-slot2" name="pref1" type="radio" value="slot2"/>
+                    <input id="pref1-slot2" name="pref1" type="radio" value="2:00PM - 5:00PM"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref1-slot3" name="pref1" type="radio" value="slot3"/>
-                    <span>5:00PM - 9:00PM </span>
+                    <input id="pref1-slot3" name="pref1" type="radio" value="5:00PM - 9:00PM"/>
+                    <span>5:00PM - 9:00PM</span>
                   </label>
               </div>
             </div>
@@ -84,19 +91,19 @@ const CandidateForm = () => {
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref2-slot1" name="pref2" type="radio" value="slot1"/>
+                    <input id="pref2-slot1" name="pref2" type="radio" value="9:00AM - 1:00PM"/>
                     <span>9:00AM - 1:00PM </span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref2-slot2" name="pref2" type="radio" value="slot2"/>
+                    <input id="pref2-slot2" name="pref2" type="radio" value="2:00PM - 5:00PM"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref2-slot3"name="pref2" type="radio" value="slot3"/>
+                    <input id="pref2-slot3"name="pref2" type="radio" value="5:00PM - 9:00PM"/>
                     <span>5:00PM - 9:00PM </span>
                   </label>
               </div>
@@ -111,19 +118,19 @@ const CandidateForm = () => {
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref3-slot1" name="pref3" type="radio" value="slot1"/>
+                    <input id="pref3-slot1" name="pref3" type="radio" value="9:00AM - 1:00PM "/>
                     <span>9:00AM - 1:00PM </span>
                   </label>
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref3-slot2" name="pref3" type="radio" value="slot2"/>
+                    <input id="pref3-slot2" name="pref3" type="radio" value="2:00PM - 5:00PM"/>
                     <span>2:00PM - 5:00PM</span>
                   </label>                  
               </div>
               <div className="input-field col s2">
                   <label className="black-text">
-                    <input id="pref3-slot3" name="pref3" type="radio" value="slot3"/>
+                    <input id="pref3-slot3" name="pref3" type="radio" value="5:00PM - 9:00PM"/>
                     <span>5:00PM - 9:00PM </span>
                   </label>
               </div>
@@ -131,7 +138,9 @@ const CandidateForm = () => {
             
             <div className="row ">
               <div className="center">
-                <button className="btn waves-effect waves-light red" type="submit" onClick={e=>submitToAPI(e)}>Submit<i className="material-icons right">send</i></button>
+                
+                  <button className="btn waves-effect waves-light red" type="submit" onClick={e=>SubmitToAPI(e)}>Submit<i className="material-icons right">send</i></button>
+                
               </div>
             </div>
             <div className="row">

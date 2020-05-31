@@ -15,7 +15,10 @@ class App extends Component {
             <Route exact path="/">	
               <CandidateForm />	
             </Route>                      
-            <Route path="/submitted">	
+            <Route exact path="/submitted">	
+              <ThankYou/>	
+            </Route>
+            <Route exact path="/AlreadySubmitted">	
               <ThankYou/>	
             </Route>
         </Switch>
