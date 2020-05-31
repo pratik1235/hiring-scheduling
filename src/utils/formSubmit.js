@@ -41,7 +41,7 @@ function submitToAPI(e) {
       
       complete: function (response,status) {
         let redirect_url=BaseUrl+"/submitted";
-        let already_submitted_url=BaseUrl+"/AlreadySubmitted";
+        let already_submitted_url=BaseUrl+"/reattempt";
         let stat=response.status;
         console.log("successfully posted data with status code "+stat+"\n "+JSON.stringify(response));
         if(stat===200)

@@ -5,6 +5,7 @@ import 'materialize-css/dist/js/materialize.min.js';
 import CandidateForm from './CandidateForm';
 import Header from './Header';
 import ThankYou from './ThankYou';
+import AlreadySubmitted from './AlreadySubmitted';
 class App extends Component {
   render() {
     return (
@@ -18,8 +19,8 @@ class App extends Component {
             <Route exact path="/submitted">	
               <ThankYou/>	
             </Route>
-            <Route exact path="/AlreadySubmitted">	
-              <ThankYou/>	
+            <Route exact path="/reattempt">	
+              <AlreadySubmitted/>	
             </Route>
         </Switch>
         </Router >
