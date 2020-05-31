@@ -18,4 +18,4 @@ class AlreadySubmitted extends Component{
         }
 }
 
-export default ThankYou;
+export default AlreadySubmitted;
